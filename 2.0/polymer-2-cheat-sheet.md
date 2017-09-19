@@ -349,8 +349,8 @@ And you want to be notified when nodes have been added/removed:
     /* ... */
     connectedCallback: function() {
       super.connectedCallback();
-      this._observer = new Polymer.FlattenedNodesObserver(function(info) {
-      // info is {addedNodes: [...], removedNodes: [...]}
+      this._observer = new Polymer.FlattenedNodesObserver(this, (info) => {
+        // info is {addedNodes: [...], removedNodes: [...]}
       });
     }
     disconnectedCallback: function() {
